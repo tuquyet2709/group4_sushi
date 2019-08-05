@@ -46,15 +46,6 @@ bower.json
 node_modules/
 
 # Ignore master key for decrypting credentials and more.
-/config/master.keys
-/config/credentials.yml.enc
-/config/database.yml
-/config/secrets.yml
-config/initializers/secret_token.rb
-/test
-config/settings.local.yml
-config/settings/*.local.yml
-config/environments/*.local.yml
 
 /.idea/*
 
