@@ -8,11 +8,8 @@
   </head>
 
   <body>
-    <%= link_to "日本語", locale: "ja" %>
-    <%= link_to "English", locale: "en" %>
     <%= render "layouts/header" %>
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
 </html>
