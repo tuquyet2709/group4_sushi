@@ -10,6 +10,7 @@ class DeviseCreateCompanies < ActiveRecord::Migration[5.1]
       t.string :address
       t.string :pr_content
       t.integer :phone
+      t.string :password_digest
 
       ## Recoverable
       t.string   :reset_password_token
