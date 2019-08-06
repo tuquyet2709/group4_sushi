@@ -1,0 +1,27 @@
+<h1>Sign in</h1>
+
+<section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign in</h2>
+                            <%= form_for(:session, url: login_path) do |f| %>
+                                
+                                <div class="form-group">
+                                <%= f.email_field :email, class: 'form-control', placeholder: "Email" %>
+                                </div>
+
+                                <div class="form-group">
+                                <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
+                                </div>
+
+                                <%= f.submit "Log in", class: "btn btn-primary" %>
+                            <% end %>
+                    <p>New user? <%= link_to "Sign up now!", students_new_url %></p>
+                    </div>
+                    <div class="signup-image">
+                        <%= image_tag("signup-image.jpg", :alt => "rss feed") %>
+                    </div>
+                </div>
+            </div>
+</section>

@@ -13,6 +13,7 @@ class DeviseCreateStudents < ActiveRecord::Migration[5.1]
       t.string :program_language
       t.string :pr_content
       t.float :avg_score
+      t.string :password_digest
 
       ## Recoverable
       t.string   :reset_password_token
