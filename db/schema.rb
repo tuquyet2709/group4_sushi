@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20190806044713) do
   end
 
   create_table "works", force: :cascade do |t|
+    t.integer "company_id"
     t.string "title"
     t.datetime "dateline"
     t.integer "salary"
@@ -94,6 +95,7 @@ ActiveRecord::Schema.define(version: 20190806044713) do
     t.string "work_location"
     t.string "content"
     t.boolean "status", default: false
+    t.boolean "process_status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
