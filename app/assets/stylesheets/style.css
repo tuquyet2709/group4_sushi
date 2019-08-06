@@ -568,7 +568,7 @@ footer .styled-select {
     border: 0;
     width: 25px;
     height: 25px;
-    background: url(../img/search.svg) center right no-repeat;
+    background-image: url("search.svg");
     cursor: pointer
 }
 
