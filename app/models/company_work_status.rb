@@ -1,0 +1,2 @@
+class CompanyWorkStatus < ApplicationRecord
+end
