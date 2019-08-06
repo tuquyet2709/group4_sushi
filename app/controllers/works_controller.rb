@@ -27,5 +27,4 @@ class WorksController < ApplicationController
                                      :status,
                                  :process_status
     )
-  end
 end

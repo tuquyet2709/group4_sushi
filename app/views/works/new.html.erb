@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Content ================================================== -->
 <div class="container margin_60_35">
   <div class="row">
@@ -49,3 +50,51 @@
 
   </div><!-- End row -->
 </div><!-- End container -->
+=======
+<h1>create work</h1>
+
+<section class="signup">
+  <div class="container">
+    <div class="signup-content">
+      <div class="signup-form">
+        <h2 class="form-title">create work</h2>
+        <%= form_for(@work) do |f| %>
+          <%= render 'shared/work_error_messages' %>
+
+          <div class="form-group">
+            <%= f.number_field :company_id, class: 'form-control', placeholder: "company_id"%>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :title, class: 'form-control', placeholder: "title"%>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :dateline, class: 'form-control', placeholder: "dateline"%>
+          </div>
+          <div class="form-group">
+            <%= f.number_field :salary, class: 'form-control', placeholder: "salary"%>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :tag, class: 'form-control', placeholder: "tag"%>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :work_location, class: 'form-control', placeholder: "work_location"%>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :content, class: 'form-control', placeholder: "content"%>
+          </div>
+          <div class="form-group">
+            <%= f.check_box :status%>
+          </div>
+          <div class="form-group">
+            <%= f.check_box :process_status%>
+          </div>
+
+
+          <%= f.submit "Create new works", class: "btn btn-primary" %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+>>>>>>> done 1

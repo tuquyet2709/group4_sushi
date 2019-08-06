@@ -35,13 +35,56 @@ addresses = ["Ha noi", "Ho Chi Minh", "Tokyo", "Saitama", "Osaka"]
   pr_content = "Our company have mission to bring future to the world"
   phone = (0...9).map { rand(10)}.join
   Company.create!(email: email,
-               name: name,
-               password:              password,
-               password_confirmation: password,
-               address: address,
-               pr_content: pr_content,
-               phone: phone
+                  name: name,
+                  password:              password,
+                  password_confirmation: password,
+                  address: address,
+                  pr_content: pr_content,
+                  phone: phone
   )
 end
 
-15.times do |n|
+work_titles = ["Java Devoloper", "AI engineer", "Backend Developer", "Fontend Developer",
+               "Bussiness Analytic", "Chef", "Senior PHP Developer", "Ruby & Rails Developer",
+               "Senior Data Scientist", "AI R&D", "Senior Blockchain Developer"]
+
+40.times do |n|
+  company_id = rand(10) + 1
+  title = work_titles.sample
+  dateline = rand(1.year.ago..Time.now).to_date
+  salary = rand(1000..3000)/100*100
+  tag = "Rails"
+  work_location = addresses.sample
+  content = "Work content"
+  status = true
+  process_status = true
+  Work.create!(company_id: company_id,
+               title: title,
+               dateline: dateline,
+               salary: salary,
+               tag: tag,
+               work_location: work_location,
+               content: content,
+               status: status,
+               process_status: process_status)
+end
+
+40.times do |n|
+  process_status = rand(2)
+  work_id = rand(40) + 1
+  student_id = rand(10) + 1
+  StudentWorkStatus.create!(process_status: process_status,
+                            work_id: work_id,
+                            student_id: student_id)
+end
+
+40.times do |n|
+  company_id = rand(10) + 1
+  student_id = rand(10) + 1
+  work_id = rand(40) + 1
+  score = rand(5) + 1
+  StudentRating.create!(company_id: company_id,
+                         student_id: student_id,
+                         work_id: work_id,
+                         score: score)
+end
