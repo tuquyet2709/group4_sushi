@@ -12,16 +12,16 @@
           <ul>
             <%= link_to "日本語", locale: "ja" %>/
             <%= link_to "English", locale: "en" %>
-            <li> <%= link_to "Login", student_session_path %></li>
-            <li> <%= link_to "Sign Up", new_student_session_path %></li>
-            <% if student_signed_in? %>
-            <li> <%= link_to "logout", destroy_student_session_path, method: :delete %></li>
+            <li> <%= link_to "Login", login_path %></li>
+            <li> <%= link_to "Sign Up", login_path %></li>
+            <% if logged_in? %>
+            <li> <%= link_to "logout", logout_path, method: :delete %></li>
             <% end %>
             <li><a href="faq.html">Help</a></li>
           </ul>
         </div><!-- End main-menu-2 -->
       </nav>
     </div><!-- End row -->
-  </div><!-- End container -->
+  </div><!-- End container -->h
 </header>
 <!-- End Header =============================================== -->
