@@ -12,8 +12,11 @@
           <ul>
             <%= link_to "日本語", locale: "ja" %>/
             <%= link_to "English", locale: "en" %>
-            <li><a href="#0" data-toggle="modal" data-target="#login_2">Log in</a></li>
-            <li><a href="#0" data-toggle="modal" data-target="#register">Sign up</a></li>
+            <li> <%= link_to "Login", student_session_path %></li>
+            <li> <%= link_to "Sign Up", new_student_session_path %></li>
+            <% if student_signed_in? %>
+            <li> <%= link_to "logout", destroy_student_session_path, method: :delete %></li>
+            <% end %>
             <li><a href="faq.html">Help</a></li>
           </ul>
         </div><!-- End main-menu-2 -->

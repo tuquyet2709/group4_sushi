@@ -10,70 +10,90 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180723060651) do
+ActiveRecord::Schema.define(version: 20190806044713) do
 
-  create_table "group_members", force: :cascade do |t|
-    t.integer "member_id"
-    t.integer "group_id"
+  create_table "admins", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "groups", force: :cascade do |t|
-    t.integer "leader_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["leader_id"], name: "index_groups_on_leader_id", unique: true
-  end
-
-  create_table "relationships", force: :cascade do |t|
-    t.integer "follower_id"
-    t.integer "followed_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["followed_id"], name: "index_relationships_on_followed_id"
-    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
-    t.index ["follower_id"], name: "index_relationships_on_follower_id"
-  end
-
-  create_table "reports", force: :cascade do |t|
-    t.integer "member_id"
-    t.string "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["member_id"], name: "index_reports_on_member_id"
-  end
-
-  create_table "subtasks", force: :cascade do |t|
-    t.integer "task_id"
-    t.string "content"
-    t.boolean "done"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tasks", force: :cascade do |t|
-    t.string "content"
-    t.date "start_date"
-    t.date "end_date"
-    t.integer "group_id"
-    t.integer "member_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["member_id"], name: "index_tasks_on_member_id"
-  end
-
-  create_table "users", force: :cascade do |t|
+  create_table "companies", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "name"
-    t.string "email"
-    t.boolean "admin"
-    t.boolean "activated"
-    t.string "password_digest"
-    t.string "remember_digest"
-    t.integer "role"
+    t.string "address"
+    t.string "pr_content"
+    t.integer "phone"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email"], name: "index_companies_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true
+  end
+
+  create_table "company_work_statuses", force: :cascade do |t|
+    t.integer "work_id"
+    t.integer "company_id"
+    t.boolean "process_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "student_ratings", force: :cascade do |t|
+    t.integer "company_id"
+    t.integer "student_id"
+    t.integer "work_id"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "student_work_statuses", force: :cascade do |t|
+    t.integer "process_status"
+    t.integer "work_id"
+    t.integer "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "name"
+    t.integer "phone"
+    t.integer "age"
+    t.string "school"
+    t.string "program_language"
+    t.string "pr_content"
+    t.float "avg_score"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_students_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+  end
+
+  create_table "works", force: :cascade do |t|
+    t.string "title"
+    t.datetime "dateline"
+    t.integer "salary"
+    t.string "tag"
+    t.string "work_location"
+    t.string "content"
+    t.boolean "status", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
