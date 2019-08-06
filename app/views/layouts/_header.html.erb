@@ -10,14 +10,16 @@
       <nav class="col--md-8 col-sm-8 col-xs-8">
         <div class="main-menu-2">
           <ul>
-            <%= link_to "日本語", locale: "ja" %>/
-            <%= link_to "English", locale: "en" %>
-            <li> <%= link_to "ログイン", login_path %></li>
-            <li> <%= link_to "サインアップ", login_path %></li>
+            <li><%= link_to "日本語 /", locale: "ja" %>
+            <%= link_to "English", locale: "en" %></li>
+            <li><a href="#">ヘルプ</a></li>
+            <li><a href="#">アバウト</a></li>
             <% if logged_in? %>
-            <li> <%= link_to "ログアウト", logout_path, method: :delete %></li>
+            <li class="boxed"> <%= link_to "ログアウト", logout_path, method: :delete %></li>
+            <% else %>
+              <li class="boxed"> <%= link_to "ログイン", login_path %></li>
             <% end %>
-            <li><a href="faq.html">ヘルプ</a></li>
+
           </ul>
         </div><!-- End main-menu-2 -->
       </nav>
