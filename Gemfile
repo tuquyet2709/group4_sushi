@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem "bcrypt"
+gem 'bootstrap'
 gem "bootstrap-sass", "3.3.7"
 gem "bootstrap-will_paginate"
 gem "carrierwave"
