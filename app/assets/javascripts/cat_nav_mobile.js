@@ -106,7 +106,7 @@ MOBILE SELECT MENU
         //hide current menu, show mobile menu
         showMenu($this);
       } else {
-        alert('mobileMenu will only work with UL or OL elements!');
+        alert('mobileMenu will only works with UL or OL elements!');
       }
     }
     

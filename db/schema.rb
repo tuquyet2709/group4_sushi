@@ -58,14 +58,6 @@ ActiveRecord::Schema.define(version: 20190806044713) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "student_work_statuses", force: :cascade do |t|
-    t.integer "process_status"
-    t.integer "work_id"
-    t.integer "student_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "students", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
