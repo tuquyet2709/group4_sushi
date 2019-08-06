@@ -1,2 +1,210 @@
-<h1>Welcome to Student page</h1>
-<%= @student.name %>
+<div id="preloader">
+  <div class="sk-spinner sk-spinner-wave" id="status">
+    <div class="sk-rect1"></div>
+    <div class="sk-rect2"></div>
+    <div class="sk-rect3"></div>
+    <div class="sk-rect4"></div>
+    <div class="sk-rect5"></div>
+  </div>
+</div><!-- End Preload -->
+
+<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="img/sub_header_cart.jpg" data-natural-width="1400" data-natural-height="350">
+  <div id="subheader">
+    <div id="sub_content">
+      <h1><%= @student.name %></h1>
+    </div><!-- End sub_content -->
+  </div><!-- End subheader -->
+</section><!-- End section -->
+
+<!-- Content ================================================== -->
+<div class="container margin_60_35">
+  <div class="row">
+    <div class="col-md-3">
+      <div id="cart_box">
+        <table class="table table_summary">
+          <tbody>
+            <tr>
+              <td>
+                実施中の仕事 <span class="pull-right">6</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                終わった仕事 <span class="pull-right">10</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                待っている仕事 <span class="pull-right">12</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                拒否された仕事 <span class="pull-right">10</span>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box_style_2 hidden-xs" id="help">
+        <i class="icon_star_alt"></i>
+        <h4>評価の平均点数</h4>
+        <a href="#" class="phone"><%= @student.avg_score %></a>
+      </div>
+
+    </div><!-- End col-md-3 -->
+
+    <div class="col-md-6">
+      <div class="box_style_2" id="order_process">
+        <h2 class="inner">情報</h2>
+        <div class="form-group">
+          <label>名前</label>
+          <p type="text" class="form-control" id="firstname_order" name="firstname_order" placeholder="First name"><%= @student.name %></p>
+        </div>
+        <div class="form-group">
+          <label>メールアドレス</label>
+          <p type="text" class="form-control" id="lastname_order" name="lastname_order" placeholder="Last name"><%= @student.email %></p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <div class="form-group">
+              <label>年齢</label>
+              <p type="text" id="city_order" name="city_order" class="form-control" placeholder="Your city"><%= @student.age %></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="form-group">
+              <label>電話番号</label>
+              <p type="text" id="pcode_oder" name="pcode_oder" class="form-control" placeholder=" Your postal code"><%= @student.phone %></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>大学</label>
+          <p type="text" id="address_order" name="address_order" class="form-control" placeholder=" Your full address"><%= @student.school %></p>
+        </div>
+        <div class="form-group">
+          <label>プログラミング言語</label>
+          <p type="text" class="form-control" id="lastname_order" name="lastname_order" placeholder="Last name"><%= @student.program_language %></p>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <label>自己PR</label>
+            <p class="form-control" style="height:150px" placeholder="例：興味や長所など…" name="notes" id="notes"><%= @student.pr_content %></p>
+          </div>
+        </div>
+      </div><!-- End box_style_1 -->
+    </div><!-- End col-md-6 -->
+
+    <div class="col-md-3" id="sidebar">
+      <div class="theiaStickySidebar">
+        <div id="cart_box">
+          <h3>実施中の仕事<i class="icon-pencil-7 pull-right"></i></h3>
+          <table class="table table_summary">
+            <tbody>
+            <tr>
+              <td>
+                <a href="#0" class="remove_item"><i class="icon-arrows-cw-1"></i></a> <strong>1x</strong> Enchiladas
+              </td>
+              <td>
+                <strong class="pull-right">$11</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#0" class="remove_item"><i class="icon-arrows-cw-1"></i></a> <strong>2x</strong> Burrito
+              </td>
+              <td>
+                <strong class="pull-right">$14</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#0" class="remove_item"><i class="icon-arrows-cw-1"></i></a> <strong>1x</strong> Chicken
+              </td>
+              <td>
+                <strong class="pull-right">$20</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#0" class="remove_item"><i class="icon-arrows-cw-1"></i></a> <strong>2x</strong> Corona Beer
+              </td>
+              <td>
+                <strong class="pull-right">$9</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#0" class="remove_item"><i class="icon-arrows-cw-1"></i></a> <strong>2x</strong> Cheese Cake
+              </td>
+              <td>
+                <strong class="pull-right">$12</strong>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div><!-- End cart_box -->
+      </div><!-- End theiaStickySidebar -->
+    </div><!-- End col-md-3 -->
+
+    <div class="col-md-3" id="sidebar">
+      <div class="theiaStickySidebar">
+        <div id="cart_box">
+          <h3>待っている仕事<i class="icon-flag-3 pull-right"></i></h3>
+          <table class="table table_summary">
+            <tbody>
+            <tr>
+              <td>
+                <a href="#0" class="remove_item"><i class="icon-clock-6"></i></a> <strong>1x</strong> Enchiladas
+              </td>
+              <td>
+                <strong class="pull-right">$11</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#0" class="remove_item"><i class="icon-clock-6"></i></a> <strong>2x</strong> Burrito
+              </td>
+              <td>
+                <strong class="pull-right">$14</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#0" class="remove_item"><i class="icon-clock-6"></i></a> <strong>1x</strong> Chicken
+              </td>
+              <td>
+                <strong class="pull-right">$20</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#0" class="remove_item"><i class="icon-clock-6"></i></a> <strong>2x</strong> Corona Beer
+              </td>
+              <td>
+                <strong class="pull-right">$9</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#0" class="remove_item"><i class="icon-clock-6"></i></a> <strong>2x</strong> Cheese Cake
+              </td>
+              <td>
+                <strong class="pull-right">$12</strong>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <hr>
+
+          <a class="btn_full" href="cart_2.html">仕事の管理</a>
+        </div><!-- End cart_box -->
+      </div><!-- End theiaStickySidebar -->
+    </div><!-- End col-md-3 -->
+
+  </div><!-- End row -->
+</div><!-- End container -->
