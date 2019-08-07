@@ -923,11 +923,19 @@ a.strip_list:hover h3 {
 }
 
 .desc .type {
-    font-size: 12px;
+    font-size: 18px;
     font-style: italic;
     color: #777;
     margin-bottom: 12px;
     margin-top: 5px
+}
+
+.salary {
+    font-size: 18px;
+    font-style: italic;
+    color: #ed1c24;
+    margin-bottom: 5    px;
+    margin-top: 5px 
 }
 
 .desc ul li i.no, .desc ul li i.ok {

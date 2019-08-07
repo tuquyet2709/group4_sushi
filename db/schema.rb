@@ -41,14 +41,6 @@ ActiveRecord::Schema.define(version: 20190806044713) do
     t.index ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true
   end
 
-  create_table "company_work_statuses", force: :cascade do |t|
-    t.integer "work_id"
-    t.integer "company_id"
-    t.boolean "process_status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "student_ratings", force: :cascade do |t|
     t.integer "company_id"
     t.integer "student_id"
