@@ -589,7 +589,7 @@ InfoBox.prototype.setContent = function (content) {
       this.closeListener_ = null;
     }
 
-    // Odd code required to make things work with MSIE.
+    // Odd code required to make things works with MSIE.
     //
     if (!this.fixedWidthSet_) {
 
@@ -603,7 +603,7 @@ InfoBox.prototype.setContent = function (content) {
       this.div_.appendChild(content);
     }
 
-    // Perverse code required to make things work with MSIE.
+    // Perverse code required to make things works with MSIE.
     // (Ensures the close box does, in fact, float to the right.)
     //
     if (!this.fixedWidthSet_) {
