@@ -7,11 +7,11 @@
       <div class="box_style_2">
         <h2 class="inner">仕事詳細内容</h2>
 
-        <h3><%=@work.title %></h3>
+        <h3><%= @work.title %></h3>
 
         <div id="summary_review">
           <div id="general_rating">
-            <%=@work.company_id %>
+            <%= @work.company.name %>
           </div>
 
           <div class="row" id="rating_summary">
@@ -43,18 +43,48 @@
         </div>
         <div>
           <p>
-           <%= @work.content %>
+            <%= @work.content %>
           </p>
         </div>
         <div id="summary_review">
           <div class="row" id="rating_summary">
-          <a href="#" class="btn_1 add_bottom_15 pull-right" data-toggle="modal" data-target="#myReview">応募する</a>
-        </div><!-- End summary_review -->
+            <!--          <a  class="btn_1 add_bottom_15 pull-right" > <%#= link_to "応募する", apply_path %></a>-->
 
-        </div>
+            <% if @hasJob == 0 %>
+              <div class="btn_1 add_bottom_15 pull-right">
+                <%= link_to "応募する", apply_path(:my_service => {:work_id => @work.id,
+                                                               :student_id => current_student.id,
+                                                               :company_id => @work.company_id}) %></div>
+            <% elsif @hasJob == 2 %>
+              <div class="btn_1 add_bottom_15 pull-right">
+              <%= link_to "応募する", apply_path %></div>
+            <% else %>
 
-      </div><!-- End box_style_1 -->
+              <% if @job.process_status == 0 %>
+                <div class="btn_1 add_bottom_15 pull-right"> 待っている</div>
+                </div>
+              <% elsif @job.process_status == 1 %>
+                <div class="btn_1 add_bottom_15 pull-right">実施中</div>
+                </div>
+              <% elsif @job.process_status == 2 %>
+                <div class="btn_1 add_bottom_15 pull-right">終わった</div>
+                </div>
+              <% elsif @job.process_status == 3 %>
+                <div class="btn_1 add_bottom_15 pull-right">拒否された</div>
+                </div>
+              <% else %>
+                <div class="btn_1 add_bottom_15 pull-right">
+                  <%= link_to "応募する", apply_path(:my_service => {:work_id => @work.id,
+                                                                 :student_id => current_user.id,
+                                                                 :company_id => @work.company_id}) %></div>
+              <% end %>
+            <% end %>
+            </div><!-- End summary_review -->
 
-    </div>
-  </div><!-- End row -->
+</div>
+
+</div><!-- End box_style_1 -->
+
+</div>
+</div><!-- End row -->
 </div><!-- End container -->

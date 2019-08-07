@@ -20,4 +20,7 @@ Rails.application.routes.draw do
   end
   resources :companies
   resources :works
+
+  get "/apply", to: "student_work_statuses#apply"
+
 end
