@@ -1,13 +1,3 @@
-<div id="preloader">
-  <div class="sk-spinner sk-spinner-wave" id="status">
-    <div class="sk-rect1"></div>
-    <div class="sk-rect2"></div>
-    <div class="sk-rect3"></div>
-    <div class="sk-rect4"></div>
-    <div class="sk-rect5"></div>
-  </div>
-</div><!-- End Preload -->
-
 <section class="parallax-window" id="short" data-parallax="scroll" data-image-src="img/sub_header_cart.jpg" data-natural-width="1400" data-natural-height="350">
   <div id="subheader">
     <div id="sub_content">
@@ -67,6 +57,10 @@
           <label>メールアドレス</label>
           <p type="text" class="form-control" id="lastname_order" name="lastname_order" placeholder="Last name"><%= @student.email %></p>
         </div>
+        <div class="form-group">
+          <label>パスワード</label>
+          <p type="text" class="form-control" id="lastname_order" name="lastname_order" placeholder="Last name">************</p>
+        </div>
         <div class="row">
           <div class="col-md-6 col-sm-6">
             <div class="form-group">
@@ -96,6 +90,7 @@
             <p class="form-control" style="height:150px" placeholder="例：興味や長所など…" name="notes" id="notes"><%= @student.pr_content %></p>
           </div>
         </div>
+        <%= link_to "情報を編集", edit_student_path, class: "btn_1"%>
       </div><!-- End box_style_1 -->
     </div><!-- End col-md-6 -->
 
@@ -200,11 +195,9 @@
             </tbody>
           </table>
           <hr>
-
-          <a class="btn_full" href="cart_2.html">仕事の管理</a>
+          <a class="btn_full" href="#">仕事の管理</a>
         </div><!-- End cart_box -->
       </div><!-- End theiaStickySidebar -->
     </div><!-- End col-md-3 -->
-
   </div><!-- End row -->
 </div><!-- End container -->
