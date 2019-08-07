@@ -21,10 +21,10 @@ class WorksController < ApplicationController
   def show
     @work = Work.find(params[:id])
     @date_count = (@work.dateline.to_date - DateTime.now.to_date).to_i
-    if logged_in? == false
+    if logged_in_student? == false
       @hasJob = 2;
     else
-      @joblist = StudentWorkStatus.find_by_sql(["select * from student_work_statuses where work_id = ? and student_id = ?", @work.id, current_user.id]);
+      @joblist = StudentWorkStatus.find_by_sql(["select * from student_work_statuses where work_id = ? and student_id = ?", @work.id, current_student.id]);
       if (@joblist.length == 0)
         @hasJob = 0;
       else

@@ -1,5 +1,5 @@
 class StudentWorkStatusesController < ApplicationController
-  before_action :logged_in_user , only: [:apply]
+  before_action :logged_in_student , only: [:apply]
 
   def apply
     @new_job = StudentWorkStatus.new
