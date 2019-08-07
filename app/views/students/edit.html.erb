@@ -1,0 +1,62 @@
+<!-- Content ================================================== -->
+<div class="container margin_60_35">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <div class="box_style_2" id="order_process">
+        <h2 class="inner">情報の編集</h2>
+        <%= form_for(@student, url: student_path, class: "popup-form") do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+          <div class="form-group">
+            <label>名前</label>
+            <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
+          </div>
+          <div class="form-group">
+            <label>メールアドレス</label>
+            <%= f.email_field :email, class: "form-control", placeholder: "メールアドレス" %>
+          </div>
+          <div class="form-group">
+            <label>パスワード</label>
+            <%= f.password_field :password, class: "form-control", placeholder: "パスワード" %>
+          </div>
+          <div class="form-group">
+            <label>パスワード確認</label>
+            <%= f.password_field :password_confirmation, class: "form-control", placeholder: "もう一度パスワードを入力" %>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <div class="form-group">
+                <label>年齢</label>
+                <%= f.number_field :age, class: "form-control", placeholder: "年齢" %>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="form-group">
+                <label>電話番号</label>
+                <%= f.number_field :phone, class: "form-control", placeholder: "電話番号" %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>大学</label>
+            <%= f.text_field :school, class: "form-control", placeholder: "勉強している大学" %>
+          </div>
+          <div class="form-group">
+            <label>プログラミング言語</label>
+            <%= f.text_field :program_language, class: "form-control", placeholder: "開発言語" %>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-12">
+              <label>自己PR</label>
+              <%= f.text_field :pr_content, class: "form-control", style: "height:150px", placeholder: "例：興味や長所など…" %>
+            </div>
+          </div>
+          <%= f.submit "保存する", class: "btn_full", style: "margin-top: 20px" %>
+        <% end %>
+      </div><!-- End box_style_1 -->
+    </div><!-- End col-md-6 -->
+
+  </div><!-- End row -->
+</div><!-- End container -->
