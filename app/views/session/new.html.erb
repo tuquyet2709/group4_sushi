@@ -1,28 +1,3 @@
-<!--<section class="signup">-->
-<!--  <div class="container">-->
-<!--    <div class="signup-content">-->
-<!--      <div class="signup-form">-->
-<!--        <h2 class="form-title">Sign in</h2>-->
-<%#= form_for(:session, url: login_path) do |f| %>
-
-<!--          <div class="form-group">-->
-<%#= f.email_field :email, class: 'form-control', placeholder: "Email" %>
-<!--          </div>-->
-
-<!--          <div class="form-group">-->
-<%#= f.password_field :password, class: 'form-control', placeholder: "Password" %>
-<!--          </div>-->
-
-<%#= f.submit "Log in", class: "btn btn-primary" %>
-<%# end %>
-<!--        <p>New user? <%#= link_to "Sign up now!", new_student_path %></p>-->
-<!--      </div>-->
-<!--      <div class="signup-image">-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
-
 <!-- Login modal -->
 <div style="margin-top: 50px; margin-bottom: 100px">
   <div class="modal-dialog">
@@ -30,7 +5,6 @@
       <div class="popup-form" id="myLogin">
         <%= form_for(:session, url: login_path, class: "popup-form") do |f| %>
           <div class="login_icon"><i class="icon_lock_alt"></i></div>
-          <h2>学生ログインページ</h2>
           <%= f.email_field :email, class: "form-control form-white", placeholder: "メールアドレス" %>
           <%= f.password_field :password, class: "form-control form-white", placeholder: "パスワード" %>
           <div class="text-left">
@@ -38,6 +12,17 @@
           </div>
           <%= f.submit "ログイン", class: "btn btn-submit" %>
         <% end %>
+        <hr>
+        <a class="btn btn-block btn-social btn-twitter">
+          <i class="social_facebook"></i>
+          <span class="fa fa-twitter">Facebookでログインする</span>
+        </a>
+        <a class="btn btn-block btn-social btn-twitter">
+          <i class="social_googleplus"></i>
+          <span class="fa fa-twitter">Googleでログインする</span>
+        </a>
+        <h5><%= link_to "アカウントをお持ちでないですか？ 登録", new_student_path %></h5>
+
       </div>
     </div>
   </div>

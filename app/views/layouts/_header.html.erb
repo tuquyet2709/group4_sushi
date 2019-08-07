@@ -3,23 +3,38 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col--md-4 col-sm-4 col-xs-4">
-        <a href="#" >
-          <%= image_tag "logo.png", id: "logo", class: "hidden-xs", width: 190, height: 23, alt: "", "data-retina": true %>
-        </a>
+          <%=link_to image_tag("logo.png", id: "logo", class: "hidden-xs", width: 190, height: 23, alt: "", "data-retina": true), root_path %>
       </div>
       <nav class="col--md-8 col-sm-8 col-xs-8">
-        <div class="main-menu-2">
+        <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
+        <div class="main-menu">
+          <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
           <ul>
-            <%= link_to "日本語", locale: "ja" %>/
-            <%= link_to "English", locale: "en" %>
-            <li> <%= link_to "ログイン", login_path %></li>
-            <li> <%= link_to "サインアップ", login_path %></li>
+            <li class="submenu">
+              <a href="javascript:void(0);" class="show-submenu">言語<i class="icon-down-open-mini"></i></a>
+              <ul>
+                <li><%= link_to "日本語", locale: "ja" %></li>
+                <li><%= link_to "English", locale: "en" %></li>
+              </ul>
+            </li>
+            <li><a href="#">ヘルプ</a></li>
+            <li><a href="#">アバウト</a></li>
+
             <% if logged_in? %>
-            <li> <%= link_to "ログアウト", logout_path, method: :delete %></li>
+              <li> <%= link_to "仕事の管理", "#" %></li>
+              <li class="submenu">
+                <a href="javascript:void(0);" class="show-submenu">アカウント<i class="icon-down-open-mini"></i></a>
+                <ul>
+                  <li><%= link_to "マイページ", student_path(@current_user.id)%></li>
+                  <li><%= link_to "情報の編集", edit_student_path(@current_user.id)%></li>
+                  <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li> <%= link_to "ログイン", login_path %></li>
             <% end %>
-            <li><a href="faq.html">ヘルプ</a></li>
           </ul>
-        </div><!-- End main-menu-2 -->
+        </div><!-- End main-menu -->
       </nav>
     </div><!-- End row -->
   </div><!-- End container -->

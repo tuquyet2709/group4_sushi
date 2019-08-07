@@ -568,7 +568,7 @@ footer .styled-select {
     border: 0;
     width: 25px;
     height: 25px;
-    background: url(../img/search.svg) center right no-repeat;
+    background-image: url("search.svg");
     cursor: pointer
 }
 
@@ -1797,6 +1797,7 @@ select.form-control.form-white {
     position: relative;
     padding: 1px 30px 10px;
     background: #78cfcf;
+    height: 560px;
     border-radius: 0;
     border: none
 }

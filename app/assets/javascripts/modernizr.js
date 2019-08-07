@@ -98,7 +98,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
       var style, ret, node, docOverflow,
           div = document.createElement('div'),
-          // After page load injecting a fake body doesn't work so check if body exists
+          // After page load injecting a fake body doesn't works so check if body exists
           body = document.body,
           // IE6 and 7 won't return offsetWidth or offsetHeight unless it's in the body element, so we fake it.
           fakeBody = body || document.createElement('body');
@@ -853,7 +853,7 @@ window.Modernizr = (function( window, document, undefined ) {
         // Mike Taylr has created a comprehensive resource for testing these attributes
         //   when applied to all input types:
         //   miketaylr.com/code/input-type-attr.html
-        // spec: www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
+        // spec: www.whatwg.org/specs/web-apps/current-works/multipage/the-input-element.html#input-type-attr-summary
 
         // Only input placeholder is tested while textarea's placeholder is not.
         // Currently Safari 4 and Opera 11 have support only for the input placeholder
@@ -1024,7 +1024,7 @@ window.Modernizr = (function( window, document, undefined ) {
         /** Detect whether the browser supports default html5 styles */
         var supportsHtml5Styles;
 
-        /** Name of the expando, to work with multiple documents or to re-shiv one document */
+        /** Name of the expando, to works with multiple documents or to re-shiv one document */
         var expando = '_html5shiv';
 
         /** The id for the the documents expando */

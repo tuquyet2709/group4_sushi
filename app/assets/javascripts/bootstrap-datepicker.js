@@ -46,7 +46,7 @@
             },
             contains: function(d) {
                 // Array.indexOf is not cross-browser;
-                // $.inArray doesn't work with Dates
+                // $.inArray doesn't works with Dates
                 var val = d && d.valueOf();
                 for (var i = 0, l = this.length; i < l; i++)
                     if (this[i].valueOf() === val)
