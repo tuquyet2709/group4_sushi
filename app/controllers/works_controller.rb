@@ -12,6 +12,9 @@ class WorksController < ApplicationController
     end
   end
 
+  def index
+    @work = Work.new
+  end
 
   def show
     @work = Work.find(params[:id])
@@ -28,4 +31,5 @@ class WorksController < ApplicationController
                                      :status,
                                  :process_status
     )
+    end
 end

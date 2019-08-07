@@ -10,6 +10,7 @@
           <%= render "shared/error_messages", object: f.object %>
           <div class="form-group">
             <label>タイトル</label>
+            <%#= f.hidden_field :company_id, :company_id => 1 %>
             <%= f.text_field :title, class: "form-control", placeholder: "タイトル" %>
           </div>
           <div class="form-group">
