@@ -55,15 +55,15 @@
   </div>
 
   <div class="row">
-    <% @top_high_salary_works.each do |job| %>
-      <%= render "job", :job => job %>
+    <% @top_high_salary_works.each do |work| %>
+      <%= render "works/work", :work => work, :type_baner => "Top Salary" %>
     <% end %>
   </div> 
 
   <% count = 0 %>
   <div class="row">
-    <% @top_recent_works.each do |job| %>
-      <%= render "job", :job => job %>
+    <% @top_recent_works.each do |work| %>
+      <%= render "works/work", :work => work, :type_baner => "Deadline" %>
       <% if count%2 == 0 %>
         <div class="w-100"></div>  
       <% end %>
