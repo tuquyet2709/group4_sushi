@@ -13,26 +13,26 @@
       <div id="cart_box">
         <table class="table table_summary">
           <tbody>
-            <tr>
-              <td>
-                実施中の仕事 <span class="pull-right">6</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                終わった仕事 <span class="pull-right">10</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                待っている仕事 <span class="pull-right">12</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                拒否された仕事 <span class="pull-right">10</span>
-              </td>
-            </tr>
+          <tr>
+            <td>
+              実施中の仕事 <span class="pull-right">6</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              終わった仕事 <span class="pull-right">10</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              待っている仕事 <span class="pull-right">12</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              拒否された仕事 <span class="pull-right">10</span>
+            </td>
+          </tr>
 
           </tbody>
         </table>
@@ -90,7 +90,7 @@
             <p class="form-control" style="height:150px" placeholder="例：興味や長所など…" name="notes" id="notes"><%= @student.pr_content %></p>
           </div>
         </div>
-        <%= link_to "情報を編集", edit_student_path, class: "btn_1"%>
+        <%= link_to "情報を編集", edit_student_path, class: "btn_1" %>
       </div><!-- End box_style_1 -->
     </div><!-- End col-md-6 -->
 
@@ -195,7 +195,7 @@
             </tbody>
           </table>
           <hr>
-          <a class="btn_full" href="#">仕事の管理</a>
+          <%= link_to "仕事の管理", works_student_path(@student.id), class: "btn_full" %>
         </div><!-- End cart_box -->
       </div><!-- End theiaStickySidebar -->
     </div><!-- End col-md-3 -->

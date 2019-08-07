@@ -10,10 +10,10 @@ class SessionController < ApplicationController
 
     if company && company.authenticate(params[:session][:password])
       log_in_company company
-      redirect_to company
+      redirect_to root_path
     elsif student && student.authenticate(params[:session][:password])
       log_in_student student
-      redirect_to student
+      redirect_to root_path
     else
       flash.now[:danger] = "Invalid email or password!"
       render :new

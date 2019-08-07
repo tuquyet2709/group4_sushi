@@ -18,14 +18,14 @@
         <ul>
           <li class="opening"><%= work.work_location %><i class="icon_pin no"></i></li>
           <li><%= work.salary %><i class="icon_currency_alt ok"></i></li>
-          <li>締め切り：あと<%= ((work.dateline - Time.now) / 1.day).to_int %>日<i class="icon_calendar no"></i></li>
+          <li style="margin-top: 5px">締め切り：あと<%= ((work.dateline - Time.now) / 1.day).to_int %>日<i class="icon_calendar no"></i></li>
         </ul>
       </div>
     </div>
     <div class="col-md-3 col-sm-3">
       <div class="go_to">
         <div>
-          <div class="btn_1"><%= link_to "詳細を見る", work_path(id: work.id), method: :get %>  </div>
+          <%= link_to "詳細を見る", work_path(id: work.id), method: :get, class: "btn_1"%>
         </div>
       </div>
     </div>
