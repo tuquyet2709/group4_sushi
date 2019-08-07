@@ -1,4 +1,7 @@
 class Student < ApplicationRecord
+    has_many :student_work_statuses
+    has_many :works, through: :student_work_statuses
+
     before_save {self.email = email.downcase }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@([a-z\d\-]+\.)+[a-z]+\z/i
 
@@ -9,4 +12,5 @@ class Student < ApplicationRecord
 
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }
+
 end

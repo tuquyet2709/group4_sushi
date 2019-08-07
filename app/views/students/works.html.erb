@@ -1,0 +1,42 @@
+<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="img/sub_header_cart.jpg" data-natural-width="1400" data-natural-height="350">
+  <div id="subheader">
+    <div id="sub_content">
+      <h1><%= @student.name %></h1>
+    </div><!-- End sub_content -->
+  </div><!-- End subheader -->
+</section><!-- End section -->
+
+<div class="container margin_60_35">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="box_style_2 nomargin">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>仕事の管理</h3>
+          <!--  Tabs -->
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">実施中の仕事</a></li>
+            <li><a href="#profile" data-toggle="tab">終わった仕事</a></li>
+            <li><a href="#messages" data-toggle="tab">待っている仕事</a></li>
+            <li><a href="#settings" data-toggle="tab">拒否された仕事</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane" id="home">
+              <%= render @work_inprocesses %>
+            </div>
+            <div class="tab-pane" id="profile">
+              <%= render @work_done %>
+            </div>
+            <div class="tab-pane" id="messages">
+              <%= render @work_wait %>
+            </div>
+            <div class="tab-pane active" id="settings">
+              <%= render @work_refuse %>
+            </div>
+          </div>
+
+        </div><!-- End col-md-12-->
+      </div><!-- End row-->
+    </div><!-- End row-->
+  </div><!-- End row-->
+</div><!-- End row-->

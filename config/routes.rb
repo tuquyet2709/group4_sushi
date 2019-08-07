@@ -8,12 +8,16 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'session#destroy'
 
-  scope "(:locale)", locale:/ja|en/ do
+  scope "(:locale)", locale: /ja|en/ do
     root "static_pages#home"
     get "static_pages/home"
   end
 
-  resources :students
+  resources :students do
+    member do
+      get :works
+    end
+  end
   resources :companies
-  resources :works
+  resource :works
 end
