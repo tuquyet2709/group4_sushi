@@ -8,5 +8,4 @@ class Work < ApplicationRecord
   validates :dateline,  presence: true
   validates :salary,  presence: true
   validates :content,  presence: true, length: { maximum: 500 }
-  validates :status,  presence: true
 end

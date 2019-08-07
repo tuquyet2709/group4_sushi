@@ -18,7 +18,11 @@ Rails.application.routes.draw do
       get :works
     end
   end
-  resources :companies
+  resources :companies do
+    member do
+      get :works
+    end
+  end
   resources :works
 
   get "/apply", to: "student_work_statuses#apply"

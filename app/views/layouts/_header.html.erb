@@ -31,7 +31,7 @@
                 </ul>
               </li>
             <% elsif logged_in_company? %>
-              <li> <%= link_to "仕事の管理", "" %></li>
+              <li> <%= link_to "仕事の管理", works_company_path(@current_company.id) %></li>
               <li class="submenu">
                 <a href="javascript:void(0);" class="show-submenu">アカウント<i class="icon-down-open-mini"></i></a>
                 <ul>

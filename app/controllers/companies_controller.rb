@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_action :find_company, only: [:show, :destroy, :edit, :update]
+  before_action :find_company, only: [:show, :destroy, :edit, :update, :works]
   before_action :logged_in_company, only: [:show, :destroy, :edit, :update]
 
   def cpn_page
@@ -35,6 +35,11 @@ class CompaniesController < ApplicationController
   def show
   end
 
+  def works
+    @work_inprocesses_open = Work.where(["company_id = ? and process_status = ? and status = ?", @company.id, false, true])
+    @work_inprocesses_close = Work.where(["company_id = ? and process_status = ? and status = ?", @company.id, false, false])
+    @work_done = Work.where(["company_id = ? and process_status = ?", @company.id, true])
+  end
 
   private
     def company_params

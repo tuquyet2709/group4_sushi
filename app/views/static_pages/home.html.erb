@@ -41,7 +41,13 @@
   <div class="container">
     <h3>人手がたりない！雇いたい！</h3>
     <p>低コストで数時間だけの雇用可能</p>
-    <%= link_to "私は採用したいです", "#" %>
+    <% if logged_in_student? %>
+      <%= link_to "私は採用したいです", "#" %>
+    <% elsif logged_in_company? %>
+      <%= link_to "私は採用したいです", new_work_path %>
+    <% else %>
+      <%= link_to "私は採用したいです", new_company_path %>
+    <% end %>
   </div><!-- End container -->
 </div><!-- End hight_light -->
 
