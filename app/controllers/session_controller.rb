@@ -2,21 +2,6 @@ class SessionController < ApplicationController
   def new
   end
 
-  # def create
-  #   user = Company.find_by(email: params[:session][:email].downcase)
-  #   if user.nil?
-  #     user = Student.find_by(email: params[:session][:email].downcase)
-  #   end
-  #
-  #   if user && user.authenticate(params[:session][:password])
-  #     log_in user
-  #     redirect_to user
-  #   else
-  #     flash.now[:danger] = "Invalid email or password!"
-  #     render :new
-  #   end
-  # end
-
   def create
     company = Company.find_by(email: params[:session][:email].downcase)
     if company.nil?
@@ -25,10 +10,10 @@ class SessionController < ApplicationController
 
     if company && company.authenticate(params[:session][:password])
       log_in_company company
-      redirect_to company
+      redirect_to root_path
     elsif student && student.authenticate(params[:session][:password])
       log_in_student student
-      redirect_to student
+      redirect_to root_path
     else
       flash.now[:danger] = "Invalid email or password!"
       render :new

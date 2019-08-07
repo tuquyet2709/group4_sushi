@@ -20,17 +20,17 @@
             </tr>
             <tr>
               <td>
+                ・公開の仕事 <span class="pull-right">10</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                ・公開しない仕事 <span class="pull-right">12</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 終わった仕事 <span class="pull-right">10</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                待っている仕事 <span class="pull-right">12</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                拒否された仕事 <span class="pull-right">10</span>
               </td>
             </tr>
 
@@ -48,14 +48,26 @@
           <p type="text" class="form-control" id="firstname_order" name="firstname_order" placeholder="First name"><%= @company.name %></p>
         </div>
         <div class="form-group">
+          <label>メールアドレス</label>
+          <p type="text" class="form-control" id="lastname_order" name="lastname_order" placeholder="Last name"><%= @company.email %></p>
+        </div>
+        <div class="form-group">
+          <label>パスワード</label>
+          <p type="text" class="form-control" id="lastname_order" name="lastname_order" placeholder="Last name">************</p>
+        </div>
+        <div class="form-group">
           <label>場所</label>
           <p type="text" class="form-control" id="lastname_order" name="lastname_order" placeholder="Last name"><%= @company.address %></p>
+        </div>
+        <div class="form-group">
+          <label>電話番号</label>
+          <p type="text" class="form-control" id="lastname_order" name="lastname_order" placeholder="Last name"><%= @company.phone %></p>
         </div>
         <hr>
         <div class="row">
           <div class="col-md-12">
             <label>自己PR</label>
-            <p class="form-control" style="height:150px" placeholder="例：興味や長所など…" name="notes" id="notes"><%= @company.pr_content %></p>
+            <p class="form-control" style="height:150px" placeholder="例：開発していることなど…" name="notes" id="notes"><%= @company.pr_content %></p>
           </div>
         </div>
         <%= link_to "情報を編集", edit_company_path , class: "btn_1"%>
@@ -117,12 +129,12 @@
     <div class="col-md-3" id="sidebar">
       <div class="theiaStickySidebar">
         <div id="cart_box">
-          <h3>終わった仕事<i class="icon-flag-3 pull-right"></i></h3>
+          <h3>終わった仕事<i class="icon_check_alt pull-right"></i></h3>
           <table class="table table_summary">
             <tbody>
             <tr>
               <td>
-                <a href="#0" class="remove_item"><i class="icon-clock-6"></i></a> <strong>1x</strong> Enchiladas
+                <a href="#0" class="remove_item"><i class="icon-check-3"></i></a> <strong>1x</strong> Enchiladas
               </td>
               <td>
                 <strong class="pull-right">$11</strong>
@@ -130,7 +142,7 @@
             </tr>
             <tr>
               <td>
-                <a href="#0" class="remove_item"><i class="icon-clock-6"></i></a> <strong>2x</strong> Burrito
+                <a href="#0" class="remove_item"><i class="icon-check-3"></i></a> <strong>2x</strong> Burrito
               </td>
               <td>
                 <strong class="pull-right">$14</strong>
@@ -138,7 +150,7 @@
             </tr>
             <tr>
               <td>
-                <a href="#0" class="remove_item"><i class="icon-clock-6"></i></a> <strong>1x</strong> Chicken
+                <a href="#0" class="remove_item"><i class="icon-check-3"></i></a> <strong>1x</strong> Chicken
               </td>
               <td>
                 <strong class="pull-right">$20</strong>
@@ -146,7 +158,7 @@
             </tr>
             <tr>
               <td>
-                <a href="#0" class="remove_item"><i class="icon-clock-6"></i></a> <strong>2x</strong> Corona Beer
+                <a href="#0" class="remove_item"><i class="icon-check-3"></i></a> <strong>2x</strong> Corona Beer
               </td>
               <td>
                 <strong class="pull-right">$9</strong>
@@ -154,7 +166,7 @@
             </tr>
             <tr>
               <td>
-                <a href="#0" class="remove_item"><i class="icon-clock-6"></i></a> <strong>2x</strong> Cheese Cake
+                <a href="#0" class="remove_item"><i class="icon-check-3"></i></a> <strong>2x</strong> Cheese Cake
               </td>
               <td>
                 <strong class="pull-right">$12</strong>
