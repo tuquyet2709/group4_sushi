@@ -51,11 +51,11 @@ work_titles = ["Java Devoloper", "AI engineer", "Backend Developer", "Fontend De
 40.times do |n|
   company_id = rand(10) + 1
   title = work_titles.sample
-  dateline = rand(1.year.ago..Time.now).to_date
+  dateline = rand(Time.now..3.months.after).to_date
   salary = rand(1000..3000)/100*100
   tag = "Rails"
   work_location = addresses.sample
-  content = "Work content"
+  content = Faker::Lorem.paragraphs()
   status = true
   process_status = true
   Work.create!(company_id: company_id,

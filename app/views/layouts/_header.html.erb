@@ -21,7 +21,7 @@
             <li><a href="#">アバウト</a></li>
 
             <% if logged_in? %>
-              <li> <%= link_to "仕事の管理", "#" %></li>
+              <li> <%= link_to "仕事の管理", works_student_path(@current_user.id) %></li>
               <li class="submenu">
                 <a href="javascript:void(0);" class="show-submenu">アカウント<i class="icon-down-open-mini"></i></a>
                 <ul>
