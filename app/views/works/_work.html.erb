@@ -25,7 +25,7 @@
     <div class="col-md-3 col-sm-3">
       <div class="go_to">
         <div>
-          <a href="detail_page.html" class="btn_1">詳細を見る</a>
+          <a class="btn_1"><%= link_to "詳細を見る", work_path(id: work.id), method: :get %>  </a>
         </div>
       </div>
     </div>
