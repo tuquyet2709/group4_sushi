@@ -56,8 +56,8 @@ work_titles = ["Java Devoloper", "AI engineer", "Backend Developer", "Fontend De
   tag = "Rails"
   work_location = addresses.sample
   content = Faker::Lorem.paragraphs()
-  status = true
-  process_status = true
+  status = [true, false].sample
+  process_status = [true, false].sample
   Work.create!(company_id: company_id,
                title: title,
                dateline: dateline,
