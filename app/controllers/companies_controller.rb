@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :find_company, only: [:show, :destroy, :edit, :update]
-  before_action :logged_in_user, only: [:show, :destroy, :edit, :update]
+  before_action :logged_in_company, only: [:show, :destroy, :edit, :update]
 
   def cpn_page
   end
@@ -26,7 +26,7 @@ class CompaniesController < ApplicationController
     if @company.save
       flash.now[:success] = "Signup successed!"
       redirect_to root_path
-      log_in @company
+      log_in_company @company
     else
       render :new
     end

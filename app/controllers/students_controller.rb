@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :destroy, :edit, :update, :works]
-  before_action :logged_in_user, only: [:show, :destroy, :edit, :update]
+  before_action :logged_in_student, only: [:show, :destroy, :edit, :update]
 
   def new
     @student = Student.new
@@ -23,7 +23,7 @@ class StudentsController < ApplicationController
     if @student.save
       flash.now[:success] = "Signup successed!"
       redirect_to root_path
-      log_in @student
+      log_in_student @student
     else
       render :new
     end
@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out_student
     redirect_to root_path
   end
 
