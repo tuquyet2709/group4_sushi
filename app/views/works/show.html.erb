@@ -1,7 +1,70 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <h1>Work#show</h1>
 <p>Find me in app/views/work/show.html.erb</p>
 =======
 <h1>Works#show</h1>
 <p>Find me in app/views/works/show.html.erb</p>
 >>>>>>> modified database and fix home screen
+=======
+<!-- Content ================================================== -->
+<div class="container margin_60_35">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <div class="box_style_2">
+        <h2 class="inner">仕事詳細内容</h2>
+
+        <h3><%=@work.title %></h3>
+
+        <div id="summary_review">
+          <div id="general_rating">
+            <%=@work.company_id %>
+          </div>
+
+          <div class="row" id="rating_summary">
+            <div class="col-md-6">
+              <ul>
+                <li>給料
+                  <span class="pull-right"><%= @work.salary %></span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul>
+                <li>残日数
+                  <span class="pull-right"><%= @date_count.to_s + "日" %></span>
+                </li>
+                <li>勤務地
+                  <span class="pull-right"><%= @work.work_location %></span>
+                </li>
+              </ul>
+            </div>
+          </div><!-- End row -->
+          <div>
+            仕事のタグ
+          </div>
+        </div><!-- End summary_review -->
+        <div id="tag_work" class="hidden"><%= @work.tag %></div>
+        <div class="chips-initial">
+          <input class="chipssss">
+        </div>
+        <div>
+          <p>
+           <%= @work.content %>
+          </p>
+        </div>
+        <div id="summary_review">
+          <div class="row" id="rating_summary">
+          <a href="#" class="btn_1 add_bottom_15 pull-right" data-toggle="modal" data-target="#myReview">応募する</a>
+        </div><!-- End summary_review -->
+
+        </div>
+
+      </div><!-- End box_style_1 -->
+
+    </div>
+  </div><!-- End row -->
+</div><!-- End container -->
+>>>>>>> 5fa6f1d... done all

@@ -15,6 +15,7 @@ class WorksController < ApplicationController
 
   def show
     @work = Work.find(params[:id])
+    @date_count = (@work.dateline.to_date - DateTime.now.to_date).to_i
   end
 
   private

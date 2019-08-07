@@ -8769,7 +8769,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     isRTL: false,
 
     // Render the month after year in the calendar title
-    showMonthAfterYear: false,
+    showMonthAfterYear: false,<input class="custom-class">
 
     // Render days of the calendar grid that fall in the next or previous month
     showDaysInNextAndPreviousMonths: false,
