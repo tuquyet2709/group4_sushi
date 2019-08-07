@@ -12,9 +12,13 @@ class WorksController < ApplicationController
     end
   end
 
+  def index
+    @work = Work.new
+  end
 
   def show
     @work = Work.find(params[:id])
+    @date_count = (@work.dateline.to_date - DateTime.now.to_date).to_i
   end
 
   private
@@ -27,4 +31,5 @@ class WorksController < ApplicationController
                                      :status,
                                  :process_status
     )
+    end
 end

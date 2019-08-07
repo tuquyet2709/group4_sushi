@@ -19,5 +19,5 @@ Rails.application.routes.draw do
     end
   end
   resources :companies
-  resource :works
+  resources :works
 end
