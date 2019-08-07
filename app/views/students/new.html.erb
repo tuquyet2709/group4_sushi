@@ -1,50 +1,30 @@
-<h1>Sign up</h1>
-
-<section class="signup">
-  <div class="container">
-    <div class="signup-content">
-      <div class="signup-form">
-        <h2 class="form-title">Sign up</h2>
-        <%= form_for(@student) do |f| %>
-          <%= render 'shared/std_error_messages' %>
-
-          <div class="form-group">
-            <%= f.text_field :name, class: 'form-control', placeholder: "Your name" %>
+<div style="margin-top: 50px; margin-bottom: 100px">
+  <div class="modal-dialog">
+    <div class="modal-content modal-popup-2">
+      <div class="popup-form">
+        <%= form_for(@student, url: root_path) do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+          <div class="login_icon"><i class="icon_lock-open_alt"></i></div>
+          <h3>学生サインアップ</h3>
+          <%= f.text_field :name, class: "form-control form-white", placeholder: "名前" %>
+          <%= f.email_field :email, class: "form-control form-white", placeholder: "メールアドレス" %>
+          <%= f.password_field :password, class: "form-control form-white", placeholder: "パスワード" %>
+          <%= f.password_field :password_confirmation, class: "form-control form-white", placeholder: "もう一度パスワードを入力" %>
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <%= f.number_field :age, class: "form-control form-white", style: "margin-top: -2px", placeholder: "年齢" %>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <%= f.number_field :phone, class: "form-control form-white", style: "margin-top: -2px", placeholder: "電話番号" %>
+            </div>
           </div>
-
-          <div class="form-group">
-            <%= f.email_field :email, class: 'form-control', placeholder: "Email" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Re-password" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.text_field :age, class: 'form-control', placeholder: "Age" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.text_field :school, class: 'form-control', placeholder: "School" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.text_field :program_language, class: 'form-control', placeholder: "Programming language" %>
-          </div>
-
-          <%= f.submit "Create my account", class: "btn btn-primary" %>
-
-          <%= link_to "Company and Freelancer Signup", companies_new_url %>
-
+          <%= f.text_field :school, class: "form-control form-white", style: "margin-top: -2px", placeholder: "勉強している大学" %>
+          <%= f.text_field :program_language, class: "form-control form-white", placeholder: "開発言語" %>
+          <div id="pass-info" class="clearfix"></div>
+          <%= f.submit "申し込む", class: "btn btn-submit", style: "margin-top: -5px" %>
         <% end %>
-      </div>
-      <div class="signup-image">
-        <%= image_tag("signup-image.jpg", :alt => "rss feed") %>
+        <h5 style="margin-top: 30px"><%= link_to "会社またはフリランスの方のサインアップページはこちら", new_company_path %></h5>
       </div>
     </div>
   </div>
-</section>
+</div>

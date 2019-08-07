@@ -994,7 +994,7 @@ a.strip_list:hover h3 {
     width: 100%
 }
 
-#confirm, #pass-info, #sub_content, #sub_content #thumb, .box_style_2#help, .feature i, .features-img, .marker_info, .modal-popup, .parallax-content, .parallax-content-2 > div, .sk-spinner-wave.sk-spinner, .strip_list.grid .desc, .tooltip-content, a.bt_filters, a.load_more_bt {
+#confirm, #pass-info, #sub_content, #sub_content #thumb, .box_style_2#help, .feature i, .features-img, .marker_info, .modal-popup,.modal-popup-2, .parallax-content, .parallax-content-2 > div, .sk-spinner-wave.sk-spinner, .strip_list.grid .desc, .tooltip-content, a.bt_filters, a.load_more_bt {
     text-align: center
 }
 
@@ -1806,6 +1806,15 @@ select.form-control.form-white {
     padding: 1px 30px 10px;
     background: #78cfcf;
     height: 560px;
+    border-radius: 0;
+    border: none
+}
+
+.modal-popup-2 {
+    position: relative;
+    padding: 1px 30px 10px;
+    background: #78cfcf;
+    height: 900px;
     border-radius: 0;
     border: none
 }

@@ -1,35 +1,33 @@
-<div class="col-md-6" >
-  <div class="strip_list">
-    <div class="ribbon_1">
-      type_banner
-    </div>
-    <div class="row">
-      # <div class="col-md-9 col-sm-9">
-        <div class="desc">
-          <div class="thumb_strip">
-            <a href="detail_page.html"><img src="img/thumb_restaurant.jpg" alt=""></a>
-          </div>
-          <h3><%= work.title %></h3>
-          <div class="type">
-            <%= work.company.name %>
-          </div>
-          <div class="location">
-            <%= truncate(work.content, length: 30) %>
-          </div>
-          <ul>
-            <li class="opening"><%= work.work_location %><i class="icon_pin no"></i></li>
-            <li><%= work.salary %><i class="icon_currency_alt ok"></i></li>
-            <li>締め切り：あと<%= ((work.dateline - Time.now)/1.day).to_int %>日<i class="icon_calendar no"></i></li>
-          </ul>
+<div class="strip_list">
+  <div class="ribbon_1">
+    type_banner
+  </div>
+  <div class="row">
+    <div class="col-md-9 col-sm-9">
+      <div class="desc">
+        <div class="thumb_strip">
+          <a href="detail_page.html"><img src="img/thumb_restaurant.jpg" alt=""></a>
         </div>
-      # </div>
-      <div class="col-md-3 col-sm-3">
-        <div class="go_to">
-          <div>
-            <a href="detail_page.html" class="btn_1">詳細を見る</a>
-          </div>
+        <h3><%= work.title %></h3>
+        <div class="type">
+          <%= work.company.name %>
+        </div>
+        <div class="location">
+          <%= truncate(work.content, length: 30) %>
+        </div>
+        <ul>
+          <li class="opening"><%= work.work_location %><i class="icon_pin no"></i></li>
+          <li><%= work.salary %><i class="icon_currency_alt ok"></i></li>
+          <li>締め切り：あと<%= ((work.dateline - Time.now) / 1.day).to_int %>日<i class="icon_calendar no"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-3">
+      <div class="go_to">
+        <div>
+          <a href="detail_page.html" class="btn_1">詳細を見る</a>
         </div>
       </div>
-    </div><!-- End row-->
-  </div><!-- End strip_list-->
-</div>
+    </div>
+  </div><!-- End row-->
+</div><!-- End strip_list-->

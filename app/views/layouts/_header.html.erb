@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col--md-4 col-sm-4 col-xs-4">
-          <%=link_to image_tag("logo.png", id: "logo", class: "hidden-xs", width: 190, height: 23, alt: "", "data-retina": true), root_path %>
+        <%= link_to image_tag("logo.png", id: "logo", class: "hidden-xs", width: 190, height: 23, alt: "", "data-retina": true), root_path %>
       </div>
       <nav class="col--md-8 col-sm-8 col-xs-8">
         <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
@@ -25,8 +25,8 @@
               <li class="submenu">
                 <a href="javascript:void(0);" class="show-submenu">アカウント<i class="icon-down-open-mini"></i></a>
                 <ul>
-                  <li><%= link_to "マイページ", student_path(@current_user.id)%></li>
-                  <li><%= link_to "情報の編集", edit_student_path(@current_user.id)%></li>
+                  <li><%= link_to "マイページ", student_path(@current_user.id) %></li>
+                  <li><%= link_to "情報の編集", edit_student_path(@current_user.id) %></li>
                   <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
                 </ul>
               </li>
