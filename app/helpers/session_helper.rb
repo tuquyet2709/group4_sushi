@@ -16,6 +16,14 @@ module SessionHelper
   def logged_in?
     current_user.present?
   end
+  #
+  # def is_student?
+  #   current_user == "Student"? 1 : 0
+  # end
+  #
+  # def is_company?
+  #   current_user == "Company"? 1 : 0
+  # end
 
   def log_out
     session.delete(:user_id)

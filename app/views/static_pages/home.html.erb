@@ -1,7 +1,8 @@
 <% provide :title, t(".title") %>
 <body>
 <!--[if lte IE 8]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a>.</p>
 <![endif]-->
 
 <!-- SubHeader =============================================== -->
@@ -47,29 +48,33 @@
 <div class="white_bg">
   <div class="container margin_60">
 
-  <div class="main_title">
-    <h2 class="nomargin_top">仕事一覧</h2>
-    <p>
-      やりたい仕事がきっとみつかる！
-    </p>
-  </div>
+    <div class="main_title">
+      <h2 class="nomargin_top">仕事一覧</h2>
+      <p>
+        やりたい仕事がきっとみつかる！
+      </p>
+    </div>
 
-  <div class="row">
-    <% @top_high_salary_works.each do |work| %>
-      <%= render "works/work", :work => work, :type_baner => "Top Salary" %>
-    <% end %>
-  </div> 
-
-  <% count = 0 %>
-  <div class="row">
-    <% @top_recent_works.each do |work| %>
-      <%= render "works/work", :work => work, :type_baner => "Deadline" %>
-      <% if count%2 == 0 %>
-        <div class="w-100"></div>  
+    <div class="row">
+      <% @top_high_salary_works.each do |work| %>
+        <div class="col-md-6">
+          <%= render work, :type_baner => "Top Salary" %>
+        </div>
       <% end %>
-    <% end %>
-  </div>
-  
+    </div>
+
+    <% count = 0 %>
+    <div class="row">
+      <% @top_recent_works.each do |work| %>
+        <div class="col-md-6">
+          <%= render work, :type_baner => "Deadline" %>
+          <% if count % 2 == 0 %>
+            <div class="w-100"></div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
   </div><!-- End container -->
 </div><!-- End white_bg -->
 

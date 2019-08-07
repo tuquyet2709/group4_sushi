@@ -2,15 +2,11 @@ class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :destroy, :edit, :update, :works]
   before_action :logged_in_user, only: [:show, :destroy, :edit, :update]
 
-  def std_page
-  end
-
   def new
     @student = Student.new
   end
 
   def edit
-
   end
 
   def update
@@ -27,8 +23,9 @@ class StudentsController < ApplicationController
     if @student.save
       flash.now[:success] = "Signup successed!"
       redirect_to root_path
+      log_in @student
     else
-      render 'new'
+      render :new
     end
   end
 

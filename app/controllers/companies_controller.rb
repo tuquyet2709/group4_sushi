@@ -10,7 +10,6 @@ class CompaniesController < ApplicationController
   end
 
   def edit
-    @in_proccess_works = 
   end
 
   def update
@@ -26,9 +25,10 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     if @company.save
       flash.now[:success] = "Signup successed!"
-      redirect_to @company
+      redirect_to root_path
+      log_in @company
     else
-      render 'new'
+      render :new
     end
   end
   
@@ -40,7 +40,7 @@ class CompaniesController < ApplicationController
     def company_params
       params.require(:company).permit(:name, :email, :password,
                                       :password_confirmation,
-                                      :location)
+                                      :location, :phone)
     end
 
     def find_company
