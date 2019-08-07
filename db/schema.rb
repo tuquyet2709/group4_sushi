@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190806044713) do
+ActiveRecord::Schema.define(version: 20190807073629) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -48,6 +48,12 @@ ActiveRecord::Schema.define(version: 20190806044713) do
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "student_work_statuses", force: :cascade do |t|
+    t.integer "work_id"
+    t.integer "student_id"
+    t.integer "process_status"
   end
 
   create_table "students", force: :cascade do |t|
