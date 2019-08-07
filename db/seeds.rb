@@ -70,7 +70,7 @@ work_titles = ["Java Devoloper", "AI engineer", "Backend Developer", "Fontend De
 end
 
 40.times do |n|
-  process_status = rand(2)
+  process_status = rand(4)
   work_id = rand(40) + 1
   student_id = rand(10) + 1
   StudentWorkStatus.create!(process_status: process_status,
