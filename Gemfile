@@ -8,7 +8,7 @@ end
 gem "bcrypt"
 gem 'bootstrap'
 gem "bootstrap-sass", "3.3.7"
-gem "bootstrap-will_paginate"
+gem 'bootstrap-kaminari-views'
 gem "carrierwave"
 gem "coffee-rails", "~> 4.2"
 gem "config"
@@ -17,6 +17,7 @@ gem "figaro"
 gem "font-awesome-rails"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
+gem 'kaminari'
 gem "mini_magick"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.6"
@@ -25,7 +26,6 @@ gem "sass-rails", "~> 5.0"
 gem "sqlite3"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
-gem "will_paginate"
 gem 'minitest-reporters'
 
 

@@ -15,7 +15,7 @@ class WorksController < ApplicationController
   end
 
   def index
-    @work = Work.new
+    @works = Work.all.page(params[:page]).per 7
   end
 
   def show
