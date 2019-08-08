@@ -26,9 +26,9 @@ gem 'rails_admin'
 gem "rails-i18n"
 gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
-gem "uglifier", ">= 1.3.0"
 gem 'minitest-reporters'
-# gem "sqlite3"
+gem 'uglifier'
+gem "sqlite3"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
