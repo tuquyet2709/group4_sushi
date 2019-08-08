@@ -1,4 +1,5 @@
 class WorksController < ApplicationController
+  before_action :set_search
 
   def new
     @work = Work.new
@@ -15,7 +16,12 @@ class WorksController < ApplicationController
   end
 
   def index
-    @works = Work.all.page(params[:page]).per 7
+    if params[:q].present?
+      @q = Work.search(params[:q])
+      @works = @q.result(distinct: true).page(params[:page]).per 7
+    else
+      @works = Work.all.page(params[:page]).per 7
+    end
   end
 
   def show

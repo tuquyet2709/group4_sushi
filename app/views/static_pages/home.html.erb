@@ -13,16 +13,13 @@
       <p>
         隙間時間を上手に活用！
       </p>
-      <form method="post" action="http://www.ansonika.com/quickfood/list_page.html">
+      <%= search_form_for @q do |f| %>
         <div id="custom-search-input">
           <div class="input-group ">
-            <input type="text" class=" search-query" placeholder="仕事や会社またはフリーランサーを検索">
-            <span class="input-group-btn">
-                        <input type="submit" class="btn_search" value="submit">
-                        </span>
+            <%= f.text_field :title_cont, class: "search-query", style: "height: 40px", placeholder: "仕事を検索" %>
           </div>
         </div>
-      </form>
+      <% end %>
     </div><!-- End sub_content -->
   </div><!-- End subheader -->
   <div id="count" class="hidden-xs">

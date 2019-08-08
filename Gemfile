@@ -21,6 +21,7 @@ gem 'kaminari'
 gem "mini_magick"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.6"
+gem "ransack"
 gem "rails-i18n"
 gem "sass-rails", "~> 5.0"
 gem "sqlite3"

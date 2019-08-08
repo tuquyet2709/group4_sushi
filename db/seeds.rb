@@ -55,7 +55,7 @@ work_titles = ["Java Devoloper", "AI engineer", "Backend Developer", "Fontend De
   salary = rand(1000..3000)/100*100
   tag = "Rails"
   work_location = addresses.sample
-  content = Faker::Lorem.paragraphs()
+  content = Faker::Lorem.paragraph()*5
   status = [true, false].sample
   process_status = [true, false].sample
   Work.create!(company_id: company_id,
