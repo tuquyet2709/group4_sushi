@@ -20,13 +20,14 @@ program_languages = ["C", "C++", "Java", "Ruby", "Python", "Javascript",
                   password_confirmation: password,
                   phone: phone,
                   age: age,
+                  school: school,
                   program_language: program_language,
                   pr_content: pr_content,
                   avg_score: avg_score
                 )
 end
 
-addresses = ["Ha noi", "Ho Chi Minh", "Tokyo", "Saitama", "Osaka"]
+addresses = ["Ha noi", "Ho Chi Minh", "東京", "埼玉", "大阪", "沖縄", "Da Nang"]
 10.times do |n|
   email = "company-#{n+1}@gmail.com"
   name = "company-#{n+1}"
@@ -48,7 +49,7 @@ work_titles = ["Java Devoloper", "AI engineer", "Backend Developer", "Fontend De
                "Bussiness Analytic", "Chef", "Senior PHP Developer", "Ruby & Rails Developer",
                "Senior Data Scientist", "AI R&D", "Senior Blockchain Developer"]
 
-40.times do |n|
+100.times do |n|
   company_id = rand(10) + 1
   title = work_titles.sample
   dateline = rand(Time.now..3.months.after).to_date
