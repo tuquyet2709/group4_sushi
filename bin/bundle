@@ -1,2 +1,0 @@
-File.expand_path('../Gemfile', File.dirname(__FILE__))
-load Gem.bin_path('bundler', 'bundle')
