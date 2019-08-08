@@ -27,5 +27,7 @@ Rails.application.routes.draw do
   resources :works
 
   get "/apply", to: "student_work_statuses#apply"
+  get "/update_work", to: "student_work_statuses#update"
+  get "/reply_request_work", to: "student_work_statuses#reply_request"
 
 end
