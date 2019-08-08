@@ -50,39 +50,104 @@
           <div class="row" id="rating_summary">
             <!--          <a  class="btn_1 add_bottom_15 pull-right" > <%#= link_to "応募する", apply_path %></a>-->
 
-            <% if @hasJob == 0 %>
-              <div class="btn_1 add_bottom_15 pull-right">
-                <%= link_to "応募する", apply_path(:my_service => {:work_id => @work.id,
-                                                               :student_id => current_student.id,
-                                                               :company_id => @work.company_id}) %></div>
-            <% elsif @hasJob == 2 %>
-              <div class="btn_1 add_bottom_15 pull-right">
-              <%= link_to "応募する", apply_path %></div>
-            <% else %>
+            <% if logged_in_company? %>
+              <% if @hasWork == 1 %>
 
-              <% if @job.process_status == 0 %>
-                <div class="btn_1 add_bottom_15 pull-right"> 待っている</div>
-                </div>
-              <% elsif @job.process_status == 1 %>
-                <div class="btn_1 add_bottom_15 pull-right">実施中</div>
-                </div>
-              <% elsif @job.process_status == 2 %>
-                <div class="btn_1 add_bottom_15 pull-right">終わった</div>
-                </div>
-              <% elsif @job.process_status == 3 %>
-                <div class="btn_1 add_bottom_15 pull-right">拒否された</div>
-                </div>
-              <% else %>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <%= link_to "削除する", work_path(@work), method: :delete, class: "btn_full" %>
+
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <%= link_to "編集する", edit_work_path(@work.id), class: "btn_full" %>
+
+                    </div>
+                  </div>
+
+              <% end %>
+
+            <% else %>
+              <% if @hasJob == 0 %>
                 <div class="btn_1 add_bottom_15 pull-right">
                   <%= link_to "応募する", apply_path(:my_service => {:work_id => @work.id,
-                                                                 :student_id => current_user.id,
+                                                                 :student_id => current_student.id,
                                                                  :company_id => @work.company_id}) %></div>
+              <% elsif @hasJob == 2 %>
+                <div class="btn_1 add_bottom_15 pull-right">
+                  <%= link_to "応募する", apply_path %></div>
+              <% else %>
+
+                <% if @job.process_status == 0 %>
+                  <div class="btn_1 add_bottom_15 pull-right"> 待っている</div>
+                  </div>
+                <% elsif @job.process_status == 1 %>
+                  <div class="btn_1 add_bottom_15 pull-right">実施中</div>
+                  </div>
+                <% elsif @job.process_status == 2 %>
+                  <div class="btn_1 add_bottom_15 pull-right">終わった</div>
+                  </div>
+                <% elsif @job.process_status == 3 %>
+                  <div class="btn_1 add_bottom_15 pull-right">拒否された</div>
+                  </div>
+                <% else %>
+                  <div class="btn_1 add_bottom_15 pull-right">
+                    <%= link_to "応募する", apply_path(:my_service => {:work_id => @work.id,
+                                                                   :student_id => current_user.id,
+                                                                   :company_id => @work.company_id}) %></div>
+                <% end %>
               <% end %>
             <% end %>
+
+
             </div><!-- End summary_review -->
 
-</div>
+    <div>
+      <br>
+    </div>
 
+
+    <% if logged_in_company? %>
+      <% if @hasWork == 1 %>
+
+        <h2 class="inner">応募した学生</h2>
+        <table class="table table-striped cart-list">
+          <thead>
+          <tr>
+            <th>
+              学生
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <div id="list_status" class="hidden"></div>
+          <% @studentWorkStatus.each do |student_status| %>
+            <% if student_status.process_status == 0 %>
+              <tr>
+                <td>
+                  <strong><%= student_status.student.name %></strong>
+                </td>
+                <td class="options">
+                  <div class="btn_1 add_bottom_15 pull-right">
+                    <%= link_to "学生情報", update_work_path(:my_service => {:work_id => @work.id,
+                                                                         :student_id => student_status.student_id,
+                                                                         :work_status_id => student_status.id
+                    }) %></div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+
+          </table>
+      <% end %>
+    <% end %>
+
+<!--    <%#= link_to "完成", update_work_path , class: "btn_1 add_bottom_15" %></div>-->
+    <%#= link_to "削除する", work_path(@work), method: :delete, class: "btn_full" %>
+
+  　　　　　
 </div><!-- End box_style_1 -->
 
 </div>

@@ -5,12 +5,12 @@
     </div>
     <div class="col-md-8">
       <div class="box_style_2" id="order_process">
-        <h2 class="inner">仕事の作成</h2>
+        <h2 class="inner">仕事の編集</h2>
         <%= form_for(@work, class: "popup-form") do |f| %>
           <%= render "shared/error_messages", object: f.object %>
           <div class="form-group">
             <label>タイトル</label>
-            <%= f.hidden_field :company_id, value: current_company.id %>
+            <%#= f.hidden_field :company_id, :company_id => 1 %>
             <%= f.text_field :title, class: "form-control", placeholder: "タイトル" %>
           </div>
           <div class="form-group">
