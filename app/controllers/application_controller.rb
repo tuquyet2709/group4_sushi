@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
     flash[:danger] = "ログインをお願いします！"
     redirect_to login_path
   end
+
+  def set_search
+    @q= Work.search(params[:q])
+  end
 end
